@@ -9,7 +9,7 @@ usage() {
 $this: download go binaries for segmentio/functions-cli-bin
 
 Usage: $this [-b] bindir [-d] [tag]
-  -b sets bindir or installation directory, Defaults to ./bin
+  -b sets bindir or installation directory, Defaults to /usr/local/bin
   -d turns on debug logging
    [tag] is a tag from
    https://github.com/segmentio/functions-cli-bin/releases
@@ -26,7 +26,7 @@ parse_args() {
   #BINDIR is ./bin unless set be ENV
   # over-ridden by flag below
 
-  BINDIR=${BINDIR:-./bin}
+  BINDIR=${BINDIR:-/usr/local/bin}
   while getopts "b:dh?x" arg; do
     case "$arg" in
       b) BINDIR="$OPTARG" ;;
